@@ -14,7 +14,8 @@ async def start_command(message: types.Message):
 
 
 @dispatcher.message()
-async def echo_message(message: types.Message):
+async def echo_message(message: types.Message, bot: Bot):
+    await bot.send_message(message.from_user.id, "Я жив!")
     await message.answer(message.text)
  
  
